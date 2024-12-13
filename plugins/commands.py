@@ -220,9 +220,7 @@ async def start(client, message):
         caption=f_caption,
         protect_content=settings['file_secure'],
         reply_markup=InlineKeyboardMarkup(btn)
-    )
-    await sent_message.reply("<b>This file will be deleted after 10 min so please forward it in your saved messages.</b>")
-    asyncio.create_task(delayed_delete(client, sent_message, 600))
+    )     
 
 @Client.on_message(filters.command('index_channels') & filters.user(ADMINS))
 async def channels_info(bot, message):
@@ -549,7 +547,7 @@ async def remove_premium_cmd_handler(client, message):
             await message.reply_text("Premium access removed to the user.")
             await client.send_message(
                 chat_id=user_id,
-                text=f"<b>premium removed by admins \n\n Contact Admin if this is mistake \n\n 👮 Admin : @Rk_botowner \n</b>",                
+                text=f"<b>premium removed by admins \n\n Contact Admin if this is mistake \n\n 👮 Admin : @Vishnumbbot \n</b>",                
             )
         else:
             await message.reply_text("Invalid time format.'")
